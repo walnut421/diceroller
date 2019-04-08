@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="masterPane" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nathanferguson.diceroller.Controllers.RollerViewController">
+   <children>
+      <HBox maxHeight="400" prefHeight="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Graphics/1_d4.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Add Xd4" textOverrun="CLIP">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                       </children>
+                  </VBox>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="89.0" layoutY="15.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Graphics/1_d6.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Add Xd6" textOverrun="CLIP">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="543.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Graphics/1_d8.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Add Xd8" textOverrun="CLIP">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="542.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Graphics/1_d10.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Add Xd10" textOverrun="CLIP">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="542.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Graphics/1_d12.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Add Xd12" textOverrun="CLIP">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="542.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Graphics/1_d20.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="Add Xd20" textOverrun="CLIP">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="511.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Graphics/1_d100.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" ellipsisString="" text="Add Xd100">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+            </Button>
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="525.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minWidth="50" mnemonicParsing="false" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField alignment="CENTER" blendMode="SRC_ATOP" maxWidth="80" prefWidth="60.0" />
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER" text="Add XdXX">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
