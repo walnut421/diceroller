@@ -8,14 +8,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class RollerViewController {
+    @FXML
+    public TextField addDXField;
     @FXML
     private Label runningTotalLabel;
     private SimpleIntegerProperty runningTotalProperty;
@@ -36,6 +41,10 @@ public class RollerViewController {
         
         runningTotalProperty = new SimpleIntegerProperty(0);
         runningTotalLabel.textProperty().bind(runningTotalProperty.asString());
+    
+        addDXField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) { addDXField.setText(newValue.replaceAll("[^\\d]", "")); }
+        });
     }
     
     public void roll(ActionEvent actionEvent) {
@@ -119,6 +128,23 @@ public class RollerViewController {
     }
     
     public void addDX(ActionEvent actionEvent) {
+        String inputString = addDXField.getText();
+        if (inputString.length() < 1) {
+            return;
+        }
+        int numSides = Integer.parseInt(inputString);
+        if(numSides < 1) {
+            JFrame frame = new JFrame("You think you're real clever");
+            java.awt.Label label = new java.awt.Label("\n\n\nDraw me a die with no sides then, genius.\n\n\n");
+            label.setAlignment(java.awt.Label.CENTER);
+            frame.getContentPane().add(label, BorderLayout.CENTER);
+            frame.pack();
+            frame.setLocation(400, 200);
+            frame.setSize(800, 500);
+            frame.setVisible(true);
+            return;
+        }
+        addDie(numSides);
     }
     
     public void addToRunningTotal(int n) {

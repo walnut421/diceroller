@@ -151,7 +151,7 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <TextField alignment="CENTER" blendMode="SRC_ATOP" maxWidth="80" prefWidth="60.0" />
+                              <TextField fx:id="addDXField" alignment="CENTER" blendMode="SRC_ATOP" maxWidth="80" prefWidth="60.0" />
                            </children>
                         </HBox>
                         <Label alignment="CENTER" text="Add XdXX">
