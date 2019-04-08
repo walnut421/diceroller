@@ -1,6 +1,7 @@
 package com.nathanferguson.diceroller.Controllers;
 
 import com.nathanferguson.diceroller.Dice.MultiDie;
+import com.nathanferguson.diceroller.Dice.Rollable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-public class DieModuleView {
+public class DieModuleView implements Rollable {
     @FXML
     private AnchorPane mainPane;
     @FXML

@@ -19,7 +19,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#delete" prefHeight="18.0" prefWidth="18.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+      <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#delete" prefHeight="18.0" prefWidth="18.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <graphic>
             <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -58,7 +58,7 @@
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
+                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -70,7 +70,7 @@
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
+                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -82,7 +82,7 @@
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
+                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -94,7 +94,7 @@
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
+                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
                      <font>
                         <Font size="11.0" />
                      </font>

@@ -1,8 +1,12 @@
 package com.nathanferguson.diceroller.Controllers;
 
 import com.nathanferguson.diceroller.Dice.Rollable;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
@@ -10,21 +14,37 @@ import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DieGroupView {
+public class DieGroupView implements Rollable {
+    
+    @FXML
+    private CheckBox isAddedToRunningTotalCheckBox;
     @FXML
     private AnchorPane mainPane;
     @FXML
     private FlowPane dicePane;
+    @FXML
+    private Label rollTotalLabel;
+    private SimpleStringProperty rollTotalText;
     private ArrayList<DieModuleView> dice;
+    private RollerViewController rollerViewController;
     
-    public void initialize() {
+    
+    public void init(RollerViewController rollerViewController) {
+        this.rollerViewController = rollerViewController;
         dice = new ArrayList<>();
+        
+        rollTotalText = new SimpleStringProperty("");
+        rollTotalLabel.textProperty().bind(rollTotalText);
     }
     
     public void roll() {
         for (DieModuleView die : dice) {
             die.roll();
         }
+        if(isAddedToRunningTotal()) {
+            rollerViewController.addToRunningTotal(getRoll());
+        }
+        updateRollElements();
     }
     
     public int getRoll() {
@@ -59,5 +79,17 @@ public class DieGroupView {
     
     public Pane getMainPane() {
         return mainPane;
+    }
+    
+    public boolean isAddedToRunningTotal() {
+        return isAddedToRunningTotalCheckBox.isSelected();
+    }
+    
+    private void updateRollElements() {
+        rollTotalText.set(Integer.toString(getRoll()));
+    }
+    
+    public void delete(ActionEvent actionEvent) {
+        rollerViewController.removeDieGroup(this);
     }
 }

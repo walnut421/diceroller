@@ -10,12 +10,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="masterPane" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nathanferguson.diceroller.Controllers.RollerViewController">
    <children>
       <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addD4" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY;" HBox.hgrow="ALWAYS">
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addD4" prefHeight="100" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: GRAY; -fx-focus-color: BLUE;" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -164,11 +165,33 @@
             </Button>
          </children>
       </HBox>
-      <ScrollPane prefHeight="500.0" prefWidth="200.0" style="-fx-border-color: GRAY;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="95.0">
+      <ScrollPane fitToHeight="true" prefHeight="500.0" prefWidth="200.0" style="-fx-border-color: GRAY;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="95.0">
          <content>
-            <HBox fx:id="dieGroupBox" prefHeight="500.0" prefWidth="200.0" />
+            <HBox fx:id="dieGroupBox" prefHeight="500.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDieGroup" prefHeight="25.0" prefWidth="25.0" text="+">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children></HBox>
          </content>
       </ScrollPane>
       <Button layoutY="182.0" mnemonicParsing="false" onAction="#roll" text="Roll All" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Label alignment="CENTER_RIGHT" prefHeight="60.0" text="Running Total: " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="runningTotalLabel" prefHeight="60.0" text="35" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="200.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#resetRunningTotal" text="Reset" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="260.0">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,9 +1,13 @@
 package com.nathanferguson.diceroller.Controllers;
 
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
@@ -12,7 +16,11 @@ import java.util.ArrayList;
 
 
 public class RollerViewController {
-    public HBox dieGroupBox;
+    @FXML
+    private Label runningTotalLabel;
+    private SimpleIntegerProperty runningTotalProperty;
+    @FXML
+    private HBox dieGroupBox;
     private ArrayList<DieGroupView> dieGroups;
     private DieGroupView activeDieGroup;
     
@@ -26,8 +34,8 @@ public class RollerViewController {
         dieGroups = new ArrayList<>();
         addDieGroup();
         
-        //masterPaneInner.prefWidthProperty().bind(masterPane.prefViewportWidthProperty());
-        //masterPaneInner.prefHeightProperty().bind(masterPane.prefViewportHeightProperty());
+        runningTotalProperty = new SimpleIntegerProperty(0);
+        runningTotalLabel.textProperty().bind(runningTotalProperty.asString());
     }
     
     public void roll(ActionEvent actionEvent) {
@@ -50,10 +58,12 @@ public class RollerViewController {
             dieGroupLoader.load();
             
             DieGroupView dieGroupView = dieGroupLoader.getController();
+            dieGroupView.init(this);
             dieGroups.add(dieGroupView);
-            dieGroupBox.getChildren().addAll(dieGroupView.getMainPane());
+            ObservableList<Node> dieGroups = dieGroupBox.getChildren();
+            dieGroups.add(dieGroups.size() - 1, dieGroupView.getMainPane());
             
-            activeDieGroup = dieGroupView;
+            setActiveDieGroup(dieGroupView);
             
         } catch(IOException e) {
             System.out.print("Exception thrown while trying to add die group: ");
@@ -61,8 +71,23 @@ public class RollerViewController {
         }
     }
     
+    public void removeDieGroup(DieGroupView group) {
+        dieGroupBox.getChildren().removeAll(group.getMainPane());
+        dieGroups.remove(group);
+    }
+    
+    public void setActiveDieGroup(DieGroupView newGroup) {
+        if(activeDieGroup != null) {
+            activeDieGroup.getMainPane().setStyle("-fx-background-color: #dddddd");
+        }
+        newGroup.getMainPane().setStyle("-fx-background-color: #c0d0ff");
+        activeDieGroup = newGroup;
+    }
+    
     public void addDie(int numSides) {
-        activeDieGroup.addDie(numSides);
+        try {
+            activeDieGroup.addDie(numSides);
+        } catch (NullPointerException e) {}
     }
     
     public void addD4(ActionEvent actionEvent) {
@@ -96,7 +121,12 @@ public class RollerViewController {
     public void addDX(ActionEvent actionEvent) {
     }
     
+    public void addToRunningTotal(int n) {
+        runningTotalProperty.set(runningTotalProperty.get() + n);
+    }
     
-    
+    public void resetRunningTotal(ActionEvent actionEvent) {
+        runningTotalProperty.set(0);
+    }
     
 }
