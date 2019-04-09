@@ -135,7 +135,7 @@ public class RollerViewController {
         int numSides = Integer.parseInt(inputString);
         if(numSides < 1) {
             JFrame frame = new JFrame("You think you're real clever");
-            java.awt.Label label = new java.awt.Label("\n\n\nDraw me a die with no sides then, genius.\n\n\n");
+            java.awt.Label label = new java.awt.Label("Draw a die with no sides then, genius.");
             label.setAlignment(java.awt.Label.CENTER);
             frame.getContentPane().add(label, BorderLayout.CENTER);
             frame.pack();

@@ -35,6 +35,8 @@ public class DieGroupView implements Rollable {
         
         rollTotalText = new SimpleStringProperty("");
         rollTotalLabel.textProperty().bind(rollTotalText);
+        
+        mainPane.setOnMousePressed(event -> rollerViewController.setActiveDieGroup(this));
     }
     
     public void roll() {

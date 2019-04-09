@@ -45,56 +45,56 @@
           <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="15.0" valignment="TOP" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="35.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="30.0" text="35" visible="false" GridPane.rowIndex="1" />
+            <TextField fx:id="diceNumField" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="35.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="30.0" text="35" visible="false" GridPane.rowIndex="1" />
             <Label fx:id="diceNumLabel" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="35" GridPane.rowIndex="1" />
             <Label fx:id="dieTypeLabel" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="18.0" text="d2000" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="4.0" right="4.0" />
                </GridPane.margin></Label>
-            <TextField maxHeight="-Infinity" maxWidth="35.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="30.0" text="+77" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="modifierField" maxHeight="-Infinity" maxWidth="35.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="30.0" text="+77" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label fx:id="modifierLabel" text="+77" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#incrementDiceNumber" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP">
+            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#incrementDiceNumber" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP">
                <font>
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Label>
                </graphic>
             </Button>
-            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#incrementModifier" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="2">
+            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="20.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#incrementModifier" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="2">
                <font>
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="+">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Label>
                </graphic>
             </Button>
-            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#decrementDiceNumber" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.rowIndex="2">
+            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="20.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#decrementDiceNumber" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.rowIndex="2">
                <font>
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Label>
                </graphic>
             </Button>
-            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#decrementModifier" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="20.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#decrementModifier" prefHeight="11.0" prefWidth="11.0" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="8.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="15.0" text="-">
                      <font>
                         <Font size="11.0" />
                      </font>
