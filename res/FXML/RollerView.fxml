@@ -177,21 +177,28 @@
                </children></HBox>
          </content>
       </ScrollPane>
+      <HBox alignment="CENTER" layoutY="595.0" prefHeight="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#resetRunningTotal" text="Reset">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Label alignment="CENTER_RIGHT" text="Running Total: ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="runningTotalLabel" text="35">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
       <Button layoutY="182.0" mnemonicParsing="false" onAction="#roll" text="Roll All" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-      <Label alignment="CENTER_RIGHT" prefHeight="60.0" text="Running Total: " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="runningTotalLabel" prefHeight="60.0" text="35" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="200.0">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Label>
-      <Button mnemonicParsing="false" onAction="#resetRunningTotal" text="Reset" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="260.0">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
