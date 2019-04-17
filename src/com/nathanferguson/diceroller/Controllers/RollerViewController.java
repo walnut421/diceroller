@@ -1,6 +1,7 @@
 package com.nathanferguson.diceroller.Controllers;
 
 
+import javafx.application.Platform;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,7 +21,9 @@ import java.util.ArrayList;
 
 public class RollerViewController {
     @FXML
-    public TextField addDXField;
+    private TextField addDXField;
+    @FXML
+    private javafx.scene.control.Button rollAllButton;
     @FXML
     private Label runningTotalLabel;
     private SimpleIntegerProperty runningTotalProperty;
@@ -45,6 +48,8 @@ public class RollerViewController {
         addDXField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { addDXField.setText(newValue.replaceAll("[^\\d]", "")); }
         });
+    
+        Platform.runLater(() -> rollAllButton.requestFocus());
     }
     
     public void roll(ActionEvent actionEvent) {
