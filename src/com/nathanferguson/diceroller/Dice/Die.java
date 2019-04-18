@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Die implements Rollable, DieSet {
+public class Die {
     private final int numberOfSides;
     private int rolledNumber;
     
@@ -38,11 +38,5 @@ public class Die implements Rollable, DieSet {
      */
     public int getRoll() {
         return rolledNumber;
-    }
-    
-    public Collection<Die> getDice() {
-        Collection<Die> dice = new ArrayList<>();
-        dice.add(this);
-        return dice;
     }
 }

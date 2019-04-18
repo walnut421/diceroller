@@ -1,6 +1,5 @@
 package com.nathanferguson.diceroller.Controllers;
 
-import com.nathanferguson.diceroller.Dice.Rollable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +13,7 @@ import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DieGroupView implements Rollable {
+public class DieGroupView {
     
     @FXML
     private CheckBox isAddedToRunningTotalCheckBox;

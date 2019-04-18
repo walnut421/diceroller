@@ -3,7 +3,7 @@ package com.nathanferguson.diceroller.Dice;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class MultiDie implements Rollable, DieSet {
+public class MultiDie {
     private ArrayList<Die> dice;
     private final int numberOfSides;
     private int modifier;
@@ -114,13 +114,9 @@ public class MultiDie implements Rollable, DieSet {
         }
     }
     
-    
-    
     public int getNumberOfSides() {
         return numberOfSides;
     }
-    
-    
     
     /**
      * Gets the roll modifier
