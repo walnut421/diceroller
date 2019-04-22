@@ -6,13 +6,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        //new File(System.getProperty("user.dir") + "/path").mkdirs();
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/RollerView.fxml"));
         primaryStage.setTitle("Dice Roller");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(root, 1000, 700));
         primaryStage.show();
     }
 
