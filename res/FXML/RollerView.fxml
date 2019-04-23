@@ -165,7 +165,7 @@
             </Button>
          </children>
       </HBox>
-      <ScrollPane fitToHeight="true" prefHeight="500.0" prefWidth="200.0" style="-fx-border-color: GRAY;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="95.0">
+      <ScrollPane fitToHeight="true" prefHeight="500.0" prefWidth="200.0" style="-fx-border-color: GRAY;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
          <content>
             <HBox fx:id="dieGroupBox" prefHeight="500.0" prefWidth="200.0" spacing="5.0">
                <children>

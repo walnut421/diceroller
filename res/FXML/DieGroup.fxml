@@ -26,7 +26,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
          <content>
             <FlowPane fx:id="dicePane" columnHalignment="CENTER" hgap="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="1" prefWidth="215.0" rowValignment="TOP" vgap="10.0" />
          </content>

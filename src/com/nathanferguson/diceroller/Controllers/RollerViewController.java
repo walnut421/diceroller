@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,8 +35,6 @@ public class RollerViewController {
     
     @FXML
     private AnchorPane masterPane;
-    @FXML
-    private HBox diceBag;
     
     @FXML
     public void initialize() {
@@ -48,6 +47,8 @@ public class RollerViewController {
         addDXField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { addDXField.setText(newValue.replaceAll("[^\\d]", "")); }
         });
+        
+        //masterPane.setPrefWidth(Double.MAX_VALUE);
     
         Platform.runLater(() -> rollAllButton.requestFocus());
     }
@@ -158,6 +159,10 @@ public class RollerViewController {
     
     public void resetRunningTotal(ActionEvent actionEvent) {
         runningTotalProperty.set(0);
+    }
+    
+    public Pane getBackground() {
+        return masterPane;
     }
     
 }
