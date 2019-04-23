@@ -43,7 +43,7 @@ public class DieModuleView {
     
     private MultiDie multiDie;
     
-    public void init(int dieSides, DieGroupView group) {
+    public void init(int dieSides, DieGroupView group) throws IllegalArgumentException {
         
         multiDie = new MultiDie(dieSides);
         multiDie.addDie();
@@ -164,6 +164,25 @@ public class DieModuleView {
     public void decrementModifier(ActionEvent actionEvent) {
         multiDie.setModifier(multiDie.getModifier() - 1);
         updateDieElements();
+    }
+    
+    public void setNumberOfDice(int n) {
+        multiDie.setNumberOfDice(n);
+    }
+    
+    public void setModifier(int n) {
+        multiDie.setModifier(n);
+    }
+    
+    @Override
+    public String toString() {
+        String numDiceString = Integer.toString(multiDie.getNumberOfDice());
+        String numSidesString = Integer.toString(multiDie.getNumberOfSides());
+        String modifierString = Integer.toString(multiDie.getModifier());
+        if(!modifierString.startsWith("-")) {
+            modifierString = "+" + modifierString;
+        }
+        return numDiceString + "d" + numSidesString + modifierString;
     }
     
     private void setEditing(Label label, boolean isEditing) {

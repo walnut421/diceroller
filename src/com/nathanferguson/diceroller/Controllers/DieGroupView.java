@@ -56,21 +56,58 @@ public class DieGroupView {
         return roll;
     }
     
-    public void addDie(int numSides) {
-        try {
-            FXMLLoader dieModuleLoader = new FXMLLoader(getClass().getResource("/FXML/DieModule.fxml"));
-            
-            dieModuleLoader.load();
-            
-            DieModuleView dieModuleController = dieModuleLoader.getController();
-            dieModuleController.init(numSides, this);
-            dice.add(dieModuleController);
-            dicePane.getChildren().addAll(dieModuleController.getMainPane());
-            
-        } catch(IOException e) {
-            System.out.print("Exception thrown while trying to add die: ");
-            System.out.println(e.getMessage());
+    public DieModuleView addDie(int numSides) throws IllegalArgumentException, IOException {
+        
+        FXMLLoader dieModuleLoader = new FXMLLoader(getClass().getResource("/FXML/DieModule.fxml"));
+        
+        dieModuleLoader.load();
+        
+        DieModuleView dieModuleController = dieModuleLoader.getController();
+        dieModuleController.init(numSides, this);
+        dice.add(dieModuleController);
+        dicePane.getChildren().addAll(dieModuleController.getMainPane());
+        return dieModuleController;
+    }
+    
+    public DieModuleView addDie(String s) throws IllegalArgumentException, IOException {
+        //Sanitize input
+        s = s.replaceAll("\\s", "").replaceAll("D", "d");
+        if(!s.matches("\\d*d\\d+([-+]\\d+)?")) {
+            throw new IllegalArgumentException("Input must match format XdN+/-M");
         }
+        
+        //Split string into separate values
+        String numDiceString = s.replaceAll("d.*", "");
+        String numSidesString = s.replaceAll("\\d*d", "").replaceAll("[-+]\\d*","");
+        String modifierString = s.replaceAll("\\d*d\\d*","");
+        
+        //Parse values
+        int numDice, numSides, modifier;
+        if(numDiceString.length() == 0) {
+            numDice = 0;
+        } else {
+            numDice = Integer.parseInt(numDiceString);
+        }
+        numSides = Integer.parseInt(numSidesString);
+        if(modifierString.length() == 0) {
+            modifier = 0;
+        } else {
+            modifier = Integer.parseInt(modifierString);
+        }
+    
+        //Create MultiDie with given parameters
+        
+        FXMLLoader dieModuleLoader = new FXMLLoader(getClass().getResource("/FXML/DieModule.fxml"));
+        
+        dieModuleLoader.load();
+        
+        DieModuleView dieModuleController = dieModuleLoader.getController();
+        dieModuleController.init(numSides, this);
+        dieModuleController.setNumberOfDice(numDice);
+        dieModuleController.setModifier(modifier);
+        dice.add(dieModuleController);
+        dicePane.getChildren().addAll(dieModuleController.getMainPane());
+        return dieModuleController;
     }
     
     public void removeDie(DieModuleView die) {
@@ -84,6 +121,20 @@ public class DieGroupView {
     
     public boolean isAddedToRunningTotal() {
         return isAddedToRunningTotalCheckBox.isSelected();
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+        for(DieModuleView die : dice) {
+            s.append(die.toString());
+            s.append(",");
+        }
+        //remove last comma and end string
+        s.deleteCharAt(s.lastIndexOf(","));
+        s.append("]");
+        return s.toString();
     }
     
     private void updateRollElements() {

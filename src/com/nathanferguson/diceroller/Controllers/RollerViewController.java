@@ -43,12 +43,10 @@ public class RollerViewController {
         
         runningTotalProperty = new SimpleIntegerProperty(0);
         runningTotalLabel.textProperty().bind(runningTotalProperty.asString());
-    
+        
         addDXField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { addDXField.setText(newValue.replaceAll("[^\\d]", "")); }
         });
-        
-        //masterPane.setPrefWidth(Double.MAX_VALUE);
     
         Platform.runLater(() -> rollAllButton.requestFocus());
     }
@@ -68,7 +66,7 @@ public class RollerViewController {
     }
     
     public void addDieGroup() {
-        try{
+        try {
             FXMLLoader dieGroupLoader = new FXMLLoader(getClass().getResource("/FXML/DieGroup.fxml"));
             dieGroupLoader.load();
             
@@ -102,7 +100,8 @@ public class RollerViewController {
     public void addDie(int numSides) {
         try {
             activeDieGroup.addDie(numSides);
-        } catch (NullPointerException e) {}
+        }
+        catch (Exception e) {}
     }
     
     public void addD4(ActionEvent actionEvent) {
@@ -165,4 +164,12 @@ public class RollerViewController {
         return masterPane;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (DieGroupView dieGroup : dieGroups) {
+            s.append(dieGroup.toString());
+        }
+        return s.toString();
+    }
 }
